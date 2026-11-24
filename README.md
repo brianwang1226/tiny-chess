@@ -11,6 +11,8 @@ It plays the gauntlet through the env at `MAKEFUN_ENV_URL`.
 - Move ordering by MVV-LVA, iterative deepening to a fixed node budget
 - Material plus centralisation and pawn-push evaluation, bishop-pair bonus
 - Deterministic: fixed node budget, never a clock, no unseeded randomness
+- Finds forced mates and hangs no pieces: quiescence covers every capture
+  and promotion, and every reply to a check, so the horizon never hides a tactic
 
 `main.py` is the entrypoint, packed from the readable `engine.py` with the
 kit's `makefun compress` (LZMA), so it fits the 4,096-byte cap. Python 3.13,
